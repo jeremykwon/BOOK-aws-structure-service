@@ -1,3 +1,0 @@
-- 구글 kwonhyunwoo@likelion.org
-- client id: 6a83bac4ba83f4e
-- client secret:c65b0297a80ddc21a9c382b336706282c44f1892
