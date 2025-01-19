@@ -48,6 +48,6 @@
 		- 스케일링
 	- '장애는 언제라도 발생할 수 있다' 라는 전제로 설계 (<mark style="background: #DCFF8C;">Design for Failure</mark>)
 		- 장애발생하더라도 서비스를 지속해서 제공 가능(가용성)
-		- ![[Drawing 2025-01-19 18.12.46.excalidraw]]
+		- ![Drawing](Drawing%202025-01-19%2018.12.46.excalidraw)
 
 
