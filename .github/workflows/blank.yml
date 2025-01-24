@@ -1,0 +1,21 @@
+name: Branch Cleanup - Dev Merge Protected
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  branch_cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: conole.log
+        run: |
+           ls -a
+
+      - name: Delete branch
+        if: github.event.pull_request.merged == true && github.event.pull_request.base.ref != 'dev'
+        run: |
+          git push origin --delete ${{ github.event.pull_request.head.ref }}
