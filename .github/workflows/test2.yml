@@ -1,0 +1,17 @@
+name: name2
+on: [push, pull_request]
+jobs: 
+  some_job2:
+    name: some_name
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: conole.log
+        run: |
+           ls -a
+
+      - name: some_name
+        run: |
+           git status
