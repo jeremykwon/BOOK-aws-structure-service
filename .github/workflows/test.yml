@@ -24,7 +24,13 @@ jobs:
       - name: Debug workspace
         run: |
           pwd
-          ls -la  # 디렉토리 상태 확인
+          ls -la  # .git 디렉토리 확인
+
+      - name: Check PR Data
+        run: |
+          echo "Merged: ${{ github.event.pull_request.merged }}"
+          echo "Base branch: ${{ github.event.pull_request.base.ref }}"
+          echo "Head branch: ${{ github.event.pull_request.head.ref }}"
 
       - name: Delete branch
         if: github.event.pull_request.merged == true && github.event.pull_request.base.ref != 'dev'
