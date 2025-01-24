@@ -9,5 +9,5 @@ jobs:
         with:
           fetch-depth: 0
       - name: some_name
-         run: |
+        run: |
            git status
