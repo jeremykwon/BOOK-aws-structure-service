@@ -1,8 +1,11 @@
-name: name2
-on: [push, pull_request]
-jobs: 
-  some_job2:
-    name: some_name
+name: Branch Cleanup - Dev Merge Protected
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  branch_cleanup:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -12,6 +15,7 @@ jobs:
         run: |
            ls -a
 
-      - name: some_name
+      - name: Delete branch
+        if: github.event.pull_request.merged == true && github.event.pull_request.base.ref != 'dev'
         run: |
-           git status
+          git push origin --delete ${{ github.event.pull_request.head.ref }}
