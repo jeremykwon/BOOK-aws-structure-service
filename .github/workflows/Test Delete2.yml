@@ -5,9 +5,13 @@ jobs:
     name: some_name
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: conole.log
+        run: |
+           ls -a
+
       - name: some_name
         run: |
            git status
