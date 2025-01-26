@@ -6,6 +6,9 @@ jobs:
   conoleLog:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
       - name: conole.log
         run: |
           ls -a
