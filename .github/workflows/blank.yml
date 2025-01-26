@@ -3,6 +3,8 @@ name: Branch Cleanup - Dev Merge Protected
 on:
   pull_request:
     types: [push, closed]
+
+    ㅅㄷㄴㅅ
     
 jobs:
   branch_cleanup:
