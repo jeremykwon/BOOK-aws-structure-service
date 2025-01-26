@@ -1,6 +1,7 @@
 name: Branch Cleanup - Dev Merge Protected
 
 on:
+  push:
   pull_request:
     types: [closed, created]
     
