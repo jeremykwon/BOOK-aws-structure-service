@@ -1,6 +1,6 @@
 name: Branch Cleanup - Dev Merge Protected
 
-on: [push, pull_request_target]
+on: [pull_request]
 
 jobs:
   branch_cleanup:
