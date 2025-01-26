@@ -2,8 +2,8 @@ name: Branch Cleanup - Dev Merge Protected
 
 on:
   pull_request:
-    types:
-      - closed
+    types: [opened, closed]
+    
 jobs:
   branch_cleanup:
     runs-on: ubuntu-latest
