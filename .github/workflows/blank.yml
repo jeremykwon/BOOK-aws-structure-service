@@ -22,9 +22,19 @@ jobs:
           echo "github.event.pull_request.merged  == true  : $MERGED_TRUE_BOOL"
       
       - name: Delete branch
-        if: github.event.pull_request.merged == true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: github.event.pull_request.merged == true && github.event.pull_request.base.ref != 'dev'
         run: |
-         git push origin --delete ${{ github.event.pull_request.head.ref }}
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
+          git push origin --delete ${{ github.event.pull_request.head.ref }}
+      
+      #- name: Delete branch
+      #  if: github.event.pull_request.merged == true
+      #  run: |
+      #   git push origin --delete ${{ github.event.pull_request.head.ref }}
 
     env:
         MERGED_RAW: ${{ github.event.pull_request.merged }}
