@@ -2,7 +2,7 @@ name: Branch Cleanup - Dev Merge Protected
 
 on:
   pull_request:
-    types: [closed]
+    types: [closed, push]
 
 jobs:
   branch_cleanup:
@@ -15,6 +15,6 @@ jobs:
         run: |
            ls -a
 
-      - name: Delete branch
-        run: |
-          git push origin --delete ${{ github.event.pull_request.head.ref }}
+      #- name: Delete branch
+      #  run: |
+      #    git push origin --delete ${{ github.event.pull_request.head.ref }}
