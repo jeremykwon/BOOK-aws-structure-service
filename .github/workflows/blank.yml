@@ -1,7 +1,9 @@
 name: Branch Cleanup - Dev Merge Protected
 
-on: [pull_request]
-
+on:
+  pull_request:
+    types:
+      - closed
 jobs:
   branch_cleanup:
     runs-on: ubuntu-latest
@@ -15,7 +17,7 @@ jobs:
       - name: conole.log
         run: |
           ls -a
-          echo "github.event.pull_request.merged           : $MERGED_RAW"
+          echo "github.event.pull_request.merged: $MERGED_RAW"
           echo "github.event.pull_request.merged == 'true' : $MERGED_TRUE_STR"
           echo "github.event.pull_request.merged  == true  : $MERGED_TRUE_BOOL"
       
