@@ -1,19 +1,20 @@
 name: Branch Cleanup - Dev Merge Protected
 
-on: [pull_request]
+on: [push, pull_request]
 
 jobs:
   branch_cleanup:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: conole.log
         run: |
            ls -a
-
       - name: Delete branch
-        if: github.event.pull_request.merged == true
         run: |
          git push origin --delete ${{ github.event.pull_request.head.ref }}
