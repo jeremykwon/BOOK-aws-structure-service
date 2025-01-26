@@ -15,6 +15,6 @@ jobs:
         run: |
            ls -a
 
-      - name: Delete branch
-        run: |
-          git push origin --delete ${{ github.event.pull_request.head.ref }}
+      #- name: Delete branch
+      #  run: |
+      #    git push origin --delete ${{ github.event.pull_request.head.ref }}
