@@ -22,7 +22,7 @@ jobs:
           echo "github.event.pull_request.merged  == true  : $MERGED_TRUE_BOOL"
       
       - name: Delete branch
-        if: $MERGED_TRUE_BOOL
+        if: github.event.pull_request.merged == true
         run: |
          git push origin --delete ${{ github.event.pull_request.head.ref }}
 
