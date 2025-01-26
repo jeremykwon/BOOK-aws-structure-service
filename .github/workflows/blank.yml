@@ -2,7 +2,7 @@ name: Branch Cleanup - Dev Merge Protected
 
 on:
   pull_request:
-    types: [push, closed]
+    types: [created, closed]
     
 jobs:
   branch_cleanup:
