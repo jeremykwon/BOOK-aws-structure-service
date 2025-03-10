@@ -93,7 +93,7 @@ SELECT COUNT(*) FROM aws.ec2.instance
 	- 예) 루트 사용자 사용(사용 안하는게 맞음), IAM 액세스 키가 대량으로 생성됨, EC2가 DDoS 공격을 위한 좀비 PC 가 됐을 가능성
 
 ## WAF (웹 방화벽)
-![](https://i.imgur.com/39elHOz.png)
+![|700x225](https://i.imgur.com/39elHOz.png)
 - AWS WAF 서비스 제공중, 간단히 적용 가능
 - 서비스 혹은 ALB에 적용 가능
 - AWS 에서 제공하는 기본 보안규칙도 있고 사용자 정의 규칙도 추가가 가능하다.
